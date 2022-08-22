@@ -1,0 +1,28 @@
+{
+  "name": "github_battle",
+  "private": true,
+  "version": "0.0.1",
+  "homepage": "https://photocat.github.io/github-battle",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "antd": "^4.22.7",
+    "axios": "^0.27.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "gh-pages": "^4.0.0",
+    "vite": "^3.0.7"
+  }
+}

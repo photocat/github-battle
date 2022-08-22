@@ -1,0 +1,70 @@
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+section.layout {
+    background-color:  white;
+}
+
+.header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+}
+
+main.page {
+    min-height: calc(100vh - 130px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+footer.footer {
+    text-align: center;
+    background: #001529;
+    color: white;
+}
+
+.ant-card-actions > li > span > .anticon.fork-icon {
+    display: inline;
+    margin-right: 5px;
+}
+
+.card {
+    width: 100%;
+}
+
+.content-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.ant-col-offset-6.hero {
+    min-height: 500px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.button {
+    padding: 10px 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: #1890ff;
+    color: white;
+    border-radius: 15px;
+    max-width: fit-content;
+}
