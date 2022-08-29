@@ -16,7 +16,7 @@ const LangSelector = memo((props) => {
 
     return (
         <Row style= {{ width: '100%' }}>
-            <Col span={18} offset={3} style= {{ width: '100%' }}>
+            <Col span={24} style= {{ width: '100%' }}>
                 <Menu
                     style={{ marginBottom: '30px' }}
                     onClick={(item) => props.handleTabSwitch(props.LANGUAGES[item.key])}

@@ -6,7 +6,7 @@ import LangSelector from '../components/LangSelector';
 import { fetchPopularRepos } from '../api';
 
 // Languages list
-const LANGUAGES = ['All', 'Javascript', 'CSS', 'Python', 'Java', 'Ruby'];
+const LANGUAGES = ['All', 'Javascript', 'CSS', 'Python', 'Java', 'Ruby', 'PHP',];
 
 const Popular = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -35,6 +35,7 @@ const Popular = () => {
 
     return (
         <>
+            <h1 className="title">Most popular repositories</h1>
             <LangSelector handleTabSwitch={handleTabSwitch} LANGUAGES={LANGUAGES} activeLang={activeLang} />
             <div className="content-tab">
                 {items.length && !isLoading

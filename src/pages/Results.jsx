@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Row, Col, Skeleton, Button } from "antd";
+import { Player as Lottie } from '@lottiefiles/react-lottie-player';
 import { summaryData } from "../api";
 import PlayerCard from "../components/PlayerCard";
-import PlayerCardConent from "../components/PlayerCardContent";
+import PlayerCardContent from "../components/PlayerCardContent";
 
 const Results = () => {
     const [searchParams] = useSearchParams();
@@ -19,10 +20,22 @@ const Results = () => {
     const whoIsWinner = (playerOne, playerTwo) => {
         if (playerOne > playerTwo) {
             setWinner('Player One Win!');
-        } else if (playerOne == playerTwo) {
+        } else if (playerOne === playerTwo) {
             setWinner("Wow it's a draw!");
         } else {
             setWinner('Player Two Win!');
+        }
+    }
+
+    const isWinner = (player, opponent) => {
+        if (player && opponent) {
+            if (player.score.value > opponent.score.value) {
+                return {text:'WINNER', color: 'red'};
+            } else if (player.score.value === opponent.score.value) {
+                return {text:'DRAW', color: 'blue'};
+            } else {
+                return {text: 'LOOSER', color: 'magenta'};
+            }
         }
     }
 
@@ -46,6 +59,18 @@ const Results = () => {
     return (
         <>
             <Row>
+                <Col xs={{span: 18, offset: 3}} lg={{span: 4, offset: 10}} className='animation-holder'>
+                    {winner &&
+                        <Lottie
+                        autoplay={true}
+                        keepLastFrame={true}
+                        src="https://assets8.lottiefiles.com/datafiles/VtCIGqDsiVwFPNM/data.json"
+                        style={{height: '140px', width: 'auto'}}
+                        ></Lottie>
+                    }
+                </Col>
+            </Row>
+            <Row>
                 <Col span={24}>
                     {winner
                         ? <h1 className="title">{winner}</h1>
@@ -59,8 +84,9 @@ const Results = () => {
                         playerName={'Player One'}
                         data={playerOneResult ? playerOneResult.profile : {}}
                         isLoading={playerOneIsLoading}
+                        isWinner={isWinner(playerOneResult, playerTwoResult)}
                     >
-                        { playerOneResult && <PlayerCardConent user={playerOneResult} /> }
+                        { playerOneResult && <PlayerCardContent user={playerOneResult} /> }
                     </PlayerCard>
                 </Col>
                 <Col xs={24} md={2} className='buttonHolder'></Col>
@@ -69,8 +95,9 @@ const Results = () => {
                             playerName={'Player Two'}
                             data={playerTwoResult ? playerTwoResult.profile : {}}
                             isLoading={playerTwoIsLoading}
+                            isWinner={isWinner(playerTwoResult, playerOneResult)}
                         >
-                        { playerTwoResult && <PlayerCardConent user={playerTwoResult} /> }
+                        { playerTwoResult && <PlayerCardContent user={playerTwoResult} /> }
                         </PlayerCard>
                 </Col>
             </Row>

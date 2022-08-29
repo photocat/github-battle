@@ -65,7 +65,7 @@ const Battle = () => {
                         data={githubUserDataOne}
                     />
                 </Col>
-                <Col xs={24} md={4} className='buttonHolder'>
+                <Col xs={{span:10, offset:7}} md={{span:4, offset: 0}} className='buttonHolder'>
                     {githubUserDataOne && githubUserDataTwo &&
                         <Lottie
                             ref={animationRef}

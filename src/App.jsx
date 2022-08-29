@@ -36,26 +36,28 @@ function App() {
         <Layout className="layout">
             {/* Header */}
             <Header className="header">
-                <div className="logo">
-                    <GithubFilled style={{ fontSize: '32px', color: 'white' }} />
+                <div className="wrapper">
+                    <div className="logo">
+                        <GithubFilled style={{ fontSize: '32px', color: 'white' }} />
+                    </div>
+
+                    {/* Menu */}
+                    <Menu
+                        theme="dark"
+                        mode="horizontal"
+                        defaultSelectedKeys={['0']}
+                        selectedKeys={highlightMenuItem()}
+                        style= {{ width: '100%' }}
+                        items={
+                            MENU_ITEM.map((item, i) => {
+                                return {
+                                    key: i,
+                                    label: <Link to={item === 'Home' ? '/' : item.toLowerCase()}>{item}</Link>
+                                }
+                            })
+                        }
+                    />
                 </div>
-                
-                {/* Menu */}
-                <Menu
-                    theme="dark"
-                    mode="horizontal"
-                    defaultSelectedKeys={['0']}
-                    selectedKeys={highlightMenuItem()}
-                    style= {{ width: '100%' }}
-                    items={
-                        MENU_ITEM.map((item, i) => {
-                            return {
-                                key: i,
-                                label: <Link to={item === 'Home' ? '/' : item.toLowerCase()}>{item}</Link>
-                            }
-                        })
-                    }
-                />
             </Header>
 
             {/* Pages */}

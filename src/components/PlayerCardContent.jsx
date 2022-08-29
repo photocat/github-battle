@@ -1,7 +1,7 @@
 import { Col, Row, Statistic } from "antd";
 import { FireFilled, GithubFilled, SmileFilled, StarFilled } from "@ant-design/icons";
 
-const PlayerCardConent = (props) => {
+const PlayerCardContent = (props) => {
     return (
         <Row gutter={[10, 10]} style={{width: '100%'}}>
             <Col xs={24} md={12} lg={12} xl={6}>
@@ -36,4 +36,4 @@ const PlayerCardConent = (props) => {
     );
 }
 
-export default PlayerCardConent;
+export default PlayerCardContent;
