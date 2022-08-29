@@ -2,7 +2,7 @@ import axios from "axios";
 import { Octokit } from "@octokit/core";
 
 const octokit = new Octokit({
-    auth: import.meta.env.VITE_GIT_TOKEN,
+    auth: import.meta.env.DEV ? import.meta.env.VITE_GIT_TOKEN : '',
 });
 
 export const fetchPopularRepos = (lang) => {
