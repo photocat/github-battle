@@ -68,3 +68,42 @@ footer.footer {
     border-radius: 15px;
     max-width: fit-content;
 }
+
+.title {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+}
+
+.title-placeholder .ant-skeleton-title {
+    margin: 0 auto 40px;
+}
+
+.ant-col.buttonHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-col.buttonHolder button {
+    width: 100%;
+}
+
+.card-content {
+    display: flex;
+    padding-top: 10px;
+}
+
+.card-reset-button {
+    margin: 0 0 0 auto;
+}
+
+.play-again {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.ant-card-meta-description p {
+    margin-bottom: 5px;
+}

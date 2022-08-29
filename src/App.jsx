@@ -10,6 +10,7 @@ const { Header, Content, Footer } = Layout;
 import Home from './pages/Home';
 import Popular from './pages/Popular';
 import Battle from './pages/Battle';
+import Results from "./pages/Results";
 
 //Menu items
 const MENU_ITEM = ['Home', 'Popular', 'Battle'];
@@ -18,7 +19,7 @@ function App() {
     const location = useLocation().pathname;
 
     const highlightMenuItem = () => {
-        let pathName = location.replace(/[\/\\]/g, '');
+        let pathName = location.split('/')[1];
         const currentPage = MENU_ITEM.map((item, i) => {
             if (item.toLowerCase() === pathName) {
                 return i + '';
@@ -63,6 +64,7 @@ function App() {
                     <Route exact path="/" element={<Home />} />
                     <Route path="popular" element={<Popular />} />
                     <Route path="battle" element={<Battle />} />
+                    <Route path="battle/results" element={<Results />} />
                 </Routes>
             </Content>
 
